@@ -1,0 +1,15 @@
+.userList {
+	padding: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.user {
+	padding: 16px;
+}
+
+.name {
+	padding: 10px;
+}
