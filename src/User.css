@@ -10,6 +10,10 @@
 	padding: 16px;
 }
 
+.user  img{
+	width: 128px;
+}
+
 .name {
-	padding: 10px;
+	padding-bottom: 10px;
 }
