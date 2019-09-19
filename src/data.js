@@ -9,7 +9,8 @@ const data = [
         {
             "id": 8,
             "email": "lindsay.ferguson@reqres.in",
-            "name": "Lindsay Ferguson",
+            "first_name": "Lindsay",
+            "last_name": "Ferguson",
             "avatars": [{url:"https://s3.amazonaws.com/uifaces/faces/twitter/araa3185/128.jpg"}]
         },
         {

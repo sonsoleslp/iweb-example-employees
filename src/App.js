@@ -19,7 +19,7 @@ class App extends React.Component {
         first_name, 
         last_name: "", 
         avatars: [{
-          url: "https://picsum.photos/128?random=1"
+          url: "https://picsum.photos/128?random="+ Math.floor(Math.random() * 100)
         }]
       }
     ]
@@ -34,7 +34,10 @@ class App extends React.Component {
        {
          this.state.data.map((product, index)=>{
            const {first_name, last_name, avatars} = product;
-           return <User key={index} name={first_name + " " + last_name} avatar={avatars[0].url} />
+           return <User 
+              key={index} 
+              name={first_name + " " + last_name} 
+              avatar={avatars[0].url} />
          })
 
        }
@@ -42,11 +45,25 @@ class App extends React.Component {
     </div>
   );
 }
-componentDidMount(){
-  fetch("https://tinyfac.es/api/users").then(res=>res.json()).then(users=>{
-      this.setState({data: users})
-  })
-}
+
+  async componentDidMount() {
+
+    let response =  await fetch('https://tinyfac.es/api/users');
+    let users = await response.json();
+    this.setState({users});
+
+  }
+
+
+  /*componentDidMount() {
+    fetch('https://tinyfac.es/api/users')
+      .then((response) => {
+        return response.json();
+      })
+      .then((users) => {
+        this.setState({users})
+      });
+    }*/
 }
 
 export default App;
